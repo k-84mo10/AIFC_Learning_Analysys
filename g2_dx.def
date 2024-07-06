@@ -1,0 +1,22 @@
+Bootstrap: docker
+From: pytorch/pytorch
+%post
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get install -y sudo python3-dev python3-pip gcc g++ libsndfile1-dev git
+    pip install matplotlib
+    pip install japanize_matplotlib
+    pip install torchinfo
+    pip install numpy==1.24.0
+    pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+    pip install torchviz
+    pip install scikit-learn
+    pip install tqdm
+    pip install Pillow
+    pip install pyheif
+    pip install umap-learn
+    pip install opencv-python
+    pip install opencv-contrib-python
+%environment
+    export PATH="/usr/local/bin:$PATH"
+%runscript
+    exec python "$@"
