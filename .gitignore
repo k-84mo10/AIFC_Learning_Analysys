@@ -1,5 +1,6 @@
 **/__pycache__/**
 **/result/**
+**/data/**
 *.pth
 *.jpg
 *.sif
